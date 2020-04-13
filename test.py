@@ -18,5 +18,7 @@ top_titles = []
 subreddit = reddit.subreddit("pics")
 hot_subreddit = subreddit.hot(limit=2)
 for post in hot_subreddit:
-    if not subreddit.is_self:
-        print(subreddit.url)
+    if post.stickied != True:
+        print(post.url)
+        print(post.title)
+        print(post.name)
